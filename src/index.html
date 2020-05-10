@@ -4,51 +4,31 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="theme-color" content="#2c3e50" />
    <title>CINEMOVIE</title>
    <!-- <link rel="stylesheet" href="./styles/main.css"> -->
 </head>
 
 <body>
-   <header class="bg-dark-color">
+   <header class="bg-dark-color fixed w-full top-0 left-0 z-10">
       <div class="max-w-xl m-auto my-0">
-         <h3 class="text-center p-4 text-lg font-bold uppercase text-white">Cinemovie</h3>
+         <h3 class="text-center p-4 text-xl font-bold uppercase text-white">Cinemovie</h3>
       </div>
    </header>
+
+   <section class="hero-banner relative mb-24">
+      <div class="h-48 w-full bg-purple-800 absolute top-0 left-0"></div>
+      <div class="max-w-xl m-auto my-0 px-4 relative" style="top: 4rem;">
+         <div class="h-48 rounded">
+            <img src="https://image.tmdb.org/t/p/w1280/jOzrELAzFxtMx2I4uDGHOotdfsS.jpg" class="w-full h-full object-cover rounded" alt="" />
+         </div>
+      </div>
+   </section>
    
    <main>
-      <div class="max-w-xl m-auto my-0 py-5 px-3">
-         <!-- <div class="video-list-popular mb-5">
-            <h3 class="text-center mb-2">Popular Movies</h3>
-            <div class="flex mb-4">
-               <div class="w-1/2 px-2">
-                  <div class="video-item overflow-hidden">
-                     <img class="w-full rounded" src="https://via.placeholder.com/250x200" alt="">
-                     <div class="px-2 py-3">
-                       <div class="font-bold text-sm mb-2">The Coldest Sunset</div>
-                     </div>
-                   </div>
-               </div>
-               <div class="w-1/2 px-2">
-                  <div class="video-item overflow-hidden">
-                     <img class="w-full rounded" src="https://via.placeholder.com/250x200" alt="">
-                     <div class="px-2 py-3">
-                       <div class="font-bold text-sm mb-2">The Coldest Sunset</div>
-                     </div>
-                   </div>
-               </div>
-            </div>
-         </div> -->
-         <div class="movie-list">
-            <!-- <div class="max-w-sm w-full max-w-full flex mb-4">
-               <div class="media h-40 w-2/6">
-                  <img src="https://via.placeholder.com/100x150" class="w-full h-full rounded object-cover" alt="" />
-               </div>
-               <div class="w-4/6 rounded-r px-3 py-1">
-                  <div class="text-white font-bold text-xl mb-2">Can coffee make you a better developer?</div>
-                  <p class="text-white text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, similique.</p>
-               </div>
-            </div> -->
-         </div>
+      <div class="max-w-xl m-auto my-0 py-5 px-4">
+         <h3 class="text-white font-bold mb-6 uppercase text-xl">Daftar Film</h3>
+         <div class="movie-list"></div>
       </div>
    </main>
 </body>
