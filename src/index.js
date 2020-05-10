@@ -1,8 +1,12 @@
 import "./styles/main.css";
+import "./components/Appbar.js";
+import feather from "feather-icons";
 import { apiURL, apiKEY, imageURL } from './constant.js';
 
 document.addEventListener('DOMContentLoaded', function() {
    // alert('DOMContentLoaded is running');
+   feather.replace();
+
    fetch(`${apiURL}/discover/movie?api_key=${apiKEY}`)
       .then(response => response.json())
       .then(response => {
@@ -27,4 +31,32 @@ function videoListItem(videos) {
       `;
       listParent.appendChild(newElement);
    });
+}
+
+const body = document.body;
+let lastScroll = 0;
+
+window.addEventListener("scroll", function() {
+   AppbarOnScroll();
+});
+
+function AppbarOnScroll() {
+
+   const currentScroll = window.pageYOffset;
+   if(currentScroll == 0) {
+      body.classList.remove("scroll-up");
+      return;
+   }
+   
+   if(currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+      // alert("working down");
+      body.classList.remove("scroll-up");
+      body.classList.add("scroll-down");
+   } else if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
+      // alert("working up");
+      body.classList.remove("scroll-down");
+      body.classList.add("scroll-up");
+   }
+
+   lastScroll = currentScroll;
 }

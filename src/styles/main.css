@@ -1,5 +1,6 @@
 :root {
-   --dark-color: #34495e;
+   --dark-color: #2c3e50;
+   --dark-color-light: #34495e;
 }
 
 @tailwind base;
@@ -12,6 +13,16 @@ body {
 .container-wrapper {
    max-width: 700px;
    margin: 0 auto;
+}
+
+body.scroll-up header {
+   transform: translate3d(0, 0, 0);
+   background-color: var(--dark-color-light);
+   transition: all 0.3s;
+}
+body.scroll-down header {
+   transform: translate3d(0, -100%, 0);
+   transition: all 0.3s;
 }
 
 /* .bg-dark-color {
