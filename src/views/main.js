@@ -2,6 +2,7 @@ import "../styles/main.css";
 import "../components/Appbar.js";
 import "../components/MovieList.js";
 import { apiURL, apiKEY, imageURL } from '../constant.js';
+import "../api/index.js";
 
 function Main() {
 

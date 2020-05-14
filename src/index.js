@@ -1,11 +1,6 @@
-import feather from "feather-icons";
 import Main from './views/main.js';
 
-document.addEventListener('DOMContentLoaded', function() {
-   // alert('DOMContentLoaded is running');
-   feather.replace();
-   Main();
-});
+document.addEventListener('DOMContentLoaded', Main);
 
 const body = document.body;
 let lastScroll = 0;
