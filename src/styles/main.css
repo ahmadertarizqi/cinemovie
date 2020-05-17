@@ -3,6 +3,14 @@
    --dark-color-light: #34495e;
 }
 
+/* overflow custom for chrome webkit */
+::-webkit-scrollbar {
+   background-color: #25313f;
+}
+::-webkit-scrollbar-thumb {
+   background-color: #7a818a;
+}
+
 @tailwind base;
 @tailwind components;
 
@@ -25,6 +33,15 @@ body.scroll-down header {
    transition: all 0.3s;
 }
 
+.banner-image {
+   height: 20rem;
+}
+
+@media screen and (max-width: 768px) {
+   .banner-image {
+      height: 12rem;
+   }
+}
 /* .bg-dark-color {
    background-color: var(--dark-color);
 } */

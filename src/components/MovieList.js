@@ -11,7 +11,8 @@ class MovieList extends HTMLElement {
       this.innerHTML = "";
       this._moviesData.forEach(movie => {
          const newElement = document.createElement("movie-item");
-         newElement.classList.add("max-w-sm", "w-full", "max-w-full", "flex", "mb-4");
+         newElement.classList.add("md:w-1/4", "w-1/3" ,"mr-4", "last:mr-0");
+         newElement.style.flex = '0 0 auto';
          newElement.movie = movie;
          this.appendChild(newElement);
       });
