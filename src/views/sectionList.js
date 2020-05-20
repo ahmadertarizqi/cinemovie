@@ -13,21 +13,21 @@ class SectionList {
       const movieList = document.querySelector("#now-playing");
       API.getNowPlaying()
          .then(response => movieList.moviesData = response)
-         .catch(error => error());
+         .catch(error => console.log('from error', error));
    }
 
    loadTopRated() {
       const movieList = document.querySelector("#top-rated");
       API.getTopRated()
          .then(response => movieList.moviesData = response)
-         .catch(error => error());
+         .catch(error => console.log('from error', error));
    }
 
    loadUpcoming() {
       const movieList = document.querySelector("#upcoming-movie");
       API.getUpcoming()
          .then(response => movieList.moviesData = response)
-         .catch(error => error());
+         .catch(error => console.log('from error', error));
    }
 }
 

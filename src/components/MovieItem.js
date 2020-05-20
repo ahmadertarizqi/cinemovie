@@ -49,9 +49,17 @@ class MovieItem extends HTMLElement {
                color: #fff;
                margin-left: 7px;
             }
+            .is-trigger {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+            }
          </style>
 
          <div class="w-full mr-4 relative">
+            <a href="#" class="block is-trigger" id="${this._movie.id}"></a>
             <div class="absolute top-0 left-0 is-star flex items-center">
                ${icons.star.toSvg(iconSettings)} 
                <span class="value font-bold">${this._movie.vote_average}</span>
@@ -62,11 +70,6 @@ class MovieItem extends HTMLElement {
             <p class="text-white text-lg font-semibold truncate">${this._movie.title}</p>
          </div>
       `;
-   //    <div class="w-4/6 rounded-r px-3 py-1">
-   //    <div class="text-white font-bold text-base mb-2">${this._movie.title}</div>
-   //    <p class="text-white text-base">${icons.calendar.toSvg(iconSettings)} ${this._movie.release_date}</p>
-   //    <p class="text-white text-base">${icons.clock.toSvg(iconSettings)} ${this._movie.release_date}</p>
-   // </div>
    }
 }
 
