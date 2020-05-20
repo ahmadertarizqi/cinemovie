@@ -12,22 +12,26 @@ class MovieList extends HTMLElement {
 
    renderElement() {
       this.innerHTML = "";
-      this._moviesData.forEach((movie, index) => {
-         // console.log(movie);
-         // console.log(index);
+      this._moviesData.forEach(movie => {
          const newElement = document.createElement("movie-item");
-         newElement.classList.add("md:w-1/4", "w-1/3" ,"mr-4", "last:mr-0");
-         newElement.style.flex = '0 0 auto';
          newElement.movie = movie;
+         newElement.setAttribute("id", movie.id);
          this.appendChild(newElement);
       });
-      
-      const targets = document.querySelectorAll('.is-trigger');
-      targets.forEach((movie, index) => {
-         movie.addEventListener("click", (ev) => {
-            ev.preventDefault();
-            movieAPI.getMovieDetail(ev.target.id);
-         });
+
+      const movies = this.getAllMovie();
+      movies.forEach(movie => this.getMovieDetail(movie));
+   }
+
+   getAllMovie() {
+      return Array.from(this.querySelectorAll('movie-item'));
+   }
+
+   getMovieDetail(movie) {
+      movie.addEventListener("click", (ev) => {
+         ev.preventDefault();
+         console.log(ev.target.id);
+         movieAPI.getMovieDetail(ev.target.id);
       });
    }
 }

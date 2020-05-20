@@ -1,11 +1,16 @@
 import { imageURL, iconSettings } from "../constant.js";
 import { icons } from 'feather-icons';
-// import { getGenresMovie } from '../api/index.js';
 import MovieAPI from '../api/index.js';
 
 const movieAPI = new MovieAPI();
 
 class MovieItem extends HTMLElement {
+
+   constructor() {
+      super();
+      this.shadowDOM = this.attachShadow({ mode: 'open' });
+   }
+
    set movie(movie) {
       this._movie = movie;
       this.renderElement();
@@ -32,8 +37,62 @@ class MovieItem extends HTMLElement {
    // }
 
    renderElement() {
-      this.innerHTML = `
+      this._id = this.getAttribute("id") || null;
+      this.shadowDOM.innerHTML = `
          <style>
+            * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+            }
+            
+            :host {
+               flex: 0 0 auto;
+               width: 33.333333%;
+               margin-right: 1rem;
+            }
+
+            @media screen and (min-width: 768px) {
+               :host { width: 25%; }
+            }
+            
+            .card-movie {
+               width: 100%;
+               position: relative;
+            }
+
+            .card-movie .label {
+               position: absolute;
+               top: 0;
+               left: 0;
+               display: flex;
+               align-items: center;
+            }
+
+            .card-movie .img-media {
+               height: 100%;
+               margin-bottom: 0.75rem;
+            }
+
+            .card-movie .img-media img {
+               width: 100%;
+               height: 100%;
+               border-radius: 0.25rem;
+               object-fit: cover;
+               -o-object-fit: cover;
+               max-width: 100%;
+               display: block;
+            }
+
+            .card-movie .title {
+               color: #fff;
+               font-size: 1.125rem;
+               font-weight: 600;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               white-space: nowrap;
+            }
+
             .is-star {
                padding: 4px 7px;
                background-color: #00000094;
@@ -58,16 +117,16 @@ class MovieItem extends HTMLElement {
             }
          </style>
 
-         <div class="w-full mr-4 relative">
-            <a href="#" class="block is-trigger" id="${this._movie.id}"></a>
-            <div class="absolute top-0 left-0 is-star flex items-center">
+         <div class="card-movie">
+            <a href="#" class="block is-trigger"></a>
+            <div class="label is-star">
                ${icons.star.toSvg(iconSettings)} 
                <span class="value font-bold">${this._movie.vote_average}</span>
             </div>
-            <div class="media h-full mb-3">
-               <img src="${imageURL}${this._movie.poster_path}" class="w-full h-full rounded object-cover" alt="${this._movie.title}" />
+            <div class="img-media">
+               <img src="${imageURL}${this._movie.poster_path}" alt="${this._movie.title}" />
             </div>
-            <p class="text-white text-lg font-semibold truncate">${this._movie.title}</p>
+            <p class="title">${this._movie.title}</p>
          </div>
       `;
    }
