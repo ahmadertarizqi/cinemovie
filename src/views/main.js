@@ -1,6 +1,7 @@
 import "../styles/main.css";
 import "../components/Appbar.js";
 import "../components/MovieList.js";
+import "../components/MovieDetail.js";
 import SectionList from "./sectionList.js";
 
 function Main() {
