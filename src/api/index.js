@@ -40,13 +40,10 @@ class MoviesAPI {
 
    getMovieDetail(id) {
       const isID = parseInt(id);
-      console.log('hello id', isID);
-      fetch(`${apiURL}/movie/${id}?api_key=${apiKEY}&append_to_response=external_ids,credits`)
+      // console.log('hello id', isID);
+      fetch(`${apiURL}/movie/${isID}?api_key=${apiKEY}&append_to_response=external_ids,credits`)
          .then(res => res.json())
-         .then(res => { 
-            this.renderElement(res); 
-            // console.log(res) 
-         })
+         .then(res => this.renderElement(res))
          .catch(error => console.log('this from error', error));
    }
 

@@ -30,6 +30,7 @@ class SliderItem extends HTMLElement {
               height: 100%;
               border-radius: 5px;
               object-fit: cover;
+              cursor: pointer;
            }
            .wrapper .info-title {
                position: absolute;
@@ -68,6 +69,20 @@ class SliderItem extends HTMLElement {
                color: #f1c40f;
                margin-right: 7px;
            }
+
+           .wrapper .label-popular {
+               position: absolute;
+               top: 0px;
+               right: 0;
+               background-color: #fff;
+               color: #553c9a;
+               padding: 4px 9px;
+               margin-top: 7px;
+               margin-right: 7px;
+               border-radius: 4px;
+               font-weight: 600;
+               display: inline-block;
+           }
           
          </style>
          <div class="wrapper">
@@ -75,6 +90,7 @@ class SliderItem extends HTMLElement {
                ${icons['star'].toSvg()}
                <span class="value">${vote_average}</span>
             </div>
+            <span class="label-popular">Popular</span>
             <img src="${imageURL}/w780${backdrop_path}" class="w-full-img" alt="${title}" />
             <div class="info-title">${title}</div>
          </div>

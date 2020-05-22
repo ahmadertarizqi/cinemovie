@@ -30,7 +30,7 @@ class MovieList extends HTMLElement {
    getMovieDetail(movie) {
       movie.addEventListener("click", (ev) => {
          ev.preventDefault();
-         console.log(ev.target.id);
+         // console.log(ev.target.id);
          movieAPI.getMovieDetail(ev.target.id);
       });
    }
