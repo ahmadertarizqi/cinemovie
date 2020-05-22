@@ -30,11 +30,6 @@ class MovieDetail extends HTMLElement {
 
       const releaseDate = new Date(release_date);
 
-      let getGenre = '';
-      genres.forEach(genre => {
-         getGenre += `<span class="genre">${genre.name}</span>`
-      });
-
       const element = document.createElement('div');
       element.classList.add('detail-inner');
       element.innerHTML = `
@@ -188,13 +183,13 @@ class MovieDetail extends HTMLElement {
                <span class="p-3 bg-indigo-900 btn-close">${icons['arrow-left'].toSvg()}</span>
             </div>
             <div class="media">
-               <img src="${imageURL}${backdrop_path}" alt="" class="is-img" />
+               <img src="${imageURL}/w780${backdrop_path}" alt="" class="is-img" />
                <div class="media-effect"></div>
             </div>
             <div class="content">
                <h3 class="title mb-13">${title}</h3>
                <div class="movie-genre">
-                  ${getGenre}
+                  ${this.getGenre(genres)}
                </div>
                <div class="time-rating mb-13">
                   <div class="rating">
@@ -266,6 +261,14 @@ class MovieDetail extends HTMLElement {
       document.body.style.overflow = 'initial';
       const target = document.querySelector('movie-detail');
       target.shadowRoot.removeChild(target.shadowRoot.lastElementChild);
+   }
+
+   getGenre(genres) {
+      let temp = '';
+      genres.forEach(genre => {
+         temp += `<span class="genre">${genre.name}</span>`
+      });
+      return temp;
    }
 
    findValueByJob(nameKey, myArray) {

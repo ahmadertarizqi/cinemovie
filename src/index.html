@@ -6,6 +6,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <meta name="theme-color" content="#34495e" />
    <title>CINEMOVIE</title>
+
+   <style>
+      .banner-slider {
+         overflow: hidden;
+      }
+   </style>
 </head>
 
 <body>
@@ -16,21 +22,32 @@
    <section class="hero-banner relative mb-24">
       <div class="md:h-64 h-40 w-full bg-purple-800 absolute top-0 left-0"></div>
       <div class="max-w-4xl m-auto my-0 px-4 relative" style="top: 4rem;">
-         <div class="banner-image">
-            <img src="https://image.tmdb.org/t/p/w1280/jOzrELAzFxtMx2I4uDGHOotdfsS.jpg" class="w-full h-full object-cover rounded" alt="" />
+         <div class="banner-slider">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide banner-image">
+                  <img src="https://image.tmdb.org/t/p/w1280/jOzrELAzFxtMx2I4uDGHOotdfsS.jpg" class="w-full h-full object-cover rounded" alt="" />
+               </div>
+               <div class="swiper-slide banner-image">
+                  <img src="https://image.tmdb.org/t/p/w1280/jOzrELAzFxtMx2I4uDGHOotdfsS.jpg" class="w-full h-full object-cover rounded" alt="" />
+               </div>
+               <div class="swiper-slide banner-image">
+                  <img src="https://image.tmdb.org/t/p/w1280/jOzrELAzFxtMx2I4uDGHOotdfsS.jpg" class="w-full h-full object-cover rounded" alt="" />
+               </div>
+            </div>
+            <div class="banner-pagination"></div>
          </div>
       </div>
    </section>
 
    <main>
       <div class="max-w-4xl m-auto my-0 py-5 px-4" id="section-parent">
-         <h3 class="text-white font-bold mb-6 uppercase text-xl">Now Playing</h3>
+         <h3 class="text-white font-bold mb-6 capitalize text-xl">Now Playing</h3>
          <movie-list id="now-playing" class="flex flex-no-wrap overflow-x-auto pb-4 mb-6" style="background-color: #2c3e50;"></movie-list>
 
-         <h3 class="text-white font-bold mb-6 uppercase text-xl">Top Rated</h3>
+         <h3 class="text-white font-bold mb-6 capitalize text-xl">Top Rated</h3>
          <movie-list id="top-rated" class="flex flex-no-wrap overflow-x-auto pb-4 mb-6" style="background-color: #2c3e50;"></movie-list>
          
-         <h3 class="text-white font-bold mb-6 uppercase text-xl">Upcoming Movie</h3>
+         <h3 class="text-white font-bold mb-6 capitalize text-xl">Upcoming Movie</h3>
          <movie-list id="upcoming-movie" class="flex flex-no-wrap overflow-x-auto pb-4" style="background-color: #2c3e50;"></movie-list>
       </div>
 

@@ -34,7 +34,7 @@ body.scroll-down header {
 }
 
 .banner-image {
-   height: 20rem;
+   height: 25rem !important;
 }
 
 @media screen and (max-width: 768px) {

@@ -25,6 +25,7 @@
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
-    "feather-icons": "^4.28.0"
+    "feather-icons": "^4.28.0",
+    "swiper": "^5.4.1"
   }
 }

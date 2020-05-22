@@ -125,7 +125,7 @@ class MovieItem extends HTMLElement {
                <span class="value font-bold">${this._movie.vote_average}</span>
             </div>
             <div class="img-media">
-               <img src="${imageURL}${this._movie.poster_path}" alt="${this._movie.title}" />
+               <img src="${imageURL}/w500${this._movie.poster_path}" alt="${this._movie.title}" />
             </div>
             <p class="title">${this._movie.title}</p>
          </div>
