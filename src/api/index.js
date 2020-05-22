@@ -31,6 +31,13 @@ class MoviesAPI {
          .catch(error => console.log('this from error', error));
    }
 
+   getPopular() {
+      return fetch(`${apiURL}/movie/popular?api_key=${apiKEY}`)
+         .then(res => res.json())
+         .then(res => res.results)
+         .catch(error => console.log('this from error', error));
+   }
+
    getMovieDetail(id) {
       const isID = parseInt(id);
       console.log('hello id', isID);

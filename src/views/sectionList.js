@@ -7,6 +7,7 @@ class SectionList {
       this.loadNowPlaying();
       this.loadTopRated();
       this.loadUpcoming();
+      this.loadPopular();
    }
 
    loadNowPlaying() {
@@ -27,6 +28,13 @@ class SectionList {
       const movieList = document.querySelector("#upcoming-movie");
       API.getUpcoming()
          .then(response => movieList.moviesData = response)
+         .catch(error => console.log('from error', error));
+   }
+
+   loadPopular() {
+      const slider = document.querySelector("slider-list");
+      API.getPopular()
+         .then(response => slider.movies = response)
          .catch(error => console.log('from error', error));
    }
 }

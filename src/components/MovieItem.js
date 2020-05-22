@@ -1,8 +1,5 @@
 import { imageURL, iconSettings } from "../constant.js";
 import { icons } from 'feather-icons';
-import MovieAPI from '../api/index.js';
-
-const movieAPI = new MovieAPI();
 
 class MovieItem extends HTMLElement {
 
@@ -91,6 +88,12 @@ class MovieItem extends HTMLElement {
                overflow: hidden;
                text-overflow: ellipsis;
                white-space: nowrap;
+            }
+
+            @media screen and (max-width: 768px) {
+               .card-movie .title {
+                  font-size: 0.85rem;
+               }
             }
 
             .is-star {

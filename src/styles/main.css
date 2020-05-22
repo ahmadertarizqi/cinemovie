@@ -34,14 +34,14 @@ body.scroll-down header {
 }
 
 .banner-image {
-   height: 25rem !important;
+   position: relative;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
    .banner-image {
       height: 12rem;
    }
-}
+} */
 /* .bg-dark-color {
    background-color: var(--dark-color);
 } */
