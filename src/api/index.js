@@ -25,7 +25,7 @@ class MoviesAPI {
    }
    
    getGenres() {
-      return fetch(`${apiURL}/genre/movie/list?api_key=${apiKEY}&language=en-US`)
+      return fetch(`${apiURL}/genre/movie/list?api_key=${apiKEY}`)
          .then(res => res.json())
          .then(res => res.genres)
          .catch(error => console.log('this from error', error));
@@ -34,11 +34,11 @@ class MoviesAPI {
    getMovieDetail(id) {
       const isID = parseInt(id);
       console.log('hello id', isID);
-      fetch(`${apiURL}/movie/${id}?api_key=${apiKEY}&language=en-US`)
+      fetch(`${apiURL}/movie/${id}?api_key=${apiKEY}&append_to_response=external_ids,credits`)
          .then(res => res.json())
          .then(res => { 
             this.renderElement(res); 
-            console.log(res) 
+            // console.log(res) 
          })
          .catch(error => console.log('this from error', error));
    }
