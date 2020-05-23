@@ -4,7 +4,7 @@
   "description": "cinemovie with themoviedb (api)",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0 --port 5000",
+    "start:dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
   "author": "ahmaderta rizqi <ahmadertariz@gmail.com>",

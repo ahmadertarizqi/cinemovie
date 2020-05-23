@@ -22,17 +22,6 @@ class MovieItem extends HTMLElement {
       return null;
    }
 
-   // setGenresMovies() {
-   //    movieAPI.getGenres()
-   //       .then(res => {
-   //          const genresById = res.reduce((acc, item) => {
-   //             return { ...acc, [item.id]: item }
-   //          }, {})
-   //          this.renderElement(genresById);
-   //       })
-   //       .catch(error => console.log(error));
-   // }
-
    renderElement() {
       this._id = this.getAttribute("id") || null;
       this.shadowDOM.innerHTML = `
