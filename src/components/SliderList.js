@@ -31,8 +31,10 @@ class SliderList extends HTMLElement {
 
    initialSlider() {
       new Swiper('.banner-slider', {
+         slidesPerView: 1,
          pagination: {
-            el: '.banner-pagination'
+            el: '.banner-pagination',
+            clickable: true
          },
          autoplay: {
             delay: 3000
