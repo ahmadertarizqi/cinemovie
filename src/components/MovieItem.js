@@ -84,7 +84,7 @@ class MovieItem extends HTMLElement {
             .card-movie .title {
                color: #fff;
                font-size: 1.125rem;
-               font-weight: 600;
+               font-weight: 500;
                overflow: hidden;
                text-overflow: ellipsis;
                white-space: nowrap;

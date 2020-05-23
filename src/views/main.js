@@ -1,4 +1,5 @@
-import "../styles/main.css";
+// import "../styles/main.css";
+import "../styles/index.css";
 import "../components/Appbar.js";
 import "../components/MovieList.js";
 import "../components/MovieDetail.js";
