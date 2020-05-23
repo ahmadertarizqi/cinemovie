@@ -33,6 +33,9 @@ class SliderList extends HTMLElement {
       new Swiper('.banner-slider', {
          pagination: {
             el: '.banner-pagination'
+         },
+         autoplay: {
+            delay: 3000
          }
       });
    }

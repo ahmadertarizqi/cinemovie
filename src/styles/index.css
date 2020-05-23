@@ -57,7 +57,6 @@ body.scroll-down header {
 /* == HEADER END ==*/
 
 /* == BANNER SLIDER == */
-
 .banner-slider {
    overflow: hidden;
 }
@@ -90,6 +89,24 @@ body.scroll-down header {
       height: 16rem;  
    }  
 }
+
+.banner-pagination {
+   text-align: center;
+}
+
+.banner-pagination .swiper-pagination-bullet {
+   background-color: #919191;
+   opacity: 1;
+   transition: all 0.3s;
+}
+
+.banner-pagination .swiper-pagination-bullet-active {
+   color: #fff;
+   background-color: #fff;
+   width: 30px;
+   border-radius: 50px;
+}
+
 /* == BANNER SLIDER END == */
 
 
