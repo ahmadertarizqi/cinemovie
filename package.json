@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "description": "cinemovie with themoviedb (api)",
   "main": "index.js",
-  "homepage": "https://ahmadertarizqi.github.io/cinemovie",
   "scripts": {
     "start:dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "ahmaderta rizqi <ahmadertariz@gmail.com>",
   "license": "ISC",
@@ -30,7 +27,6 @@
   },
   "devDependencies": {
     "feather-icons": "^4.28.0",
-    "gh-pages": "^2.2.0",
     "swiper": "^5.4.1"
   }
 }
