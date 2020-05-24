@@ -12,30 +12,42 @@ class SectionList {
 
    loadNowPlaying() {
       const movieList = document.querySelector("#now-playing");
-      API.getNowPlaying()
-         .then(response => movieList.moviesData = response)
-         .catch(error => console.log('from error', error));
+      API.getNowPlaying(response => {
+         movieList.moviesData = response;
+         return response;
+      }, error => {
+         console.log('from error', error);
+      });
    }
 
    loadTopRated() {
       const movieList = document.querySelector("#top-rated");
-      API.getTopRated()
-         .then(response => movieList.moviesData = response)
-         .catch(error => console.log('from error', error));
+      API.getTopRated(response => {
+         movieList.moviesData = response;
+         return response;
+      }, error => {
+         console.log('from error', error);
+      });
    }
 
    loadUpcoming() {
       const movieList = document.querySelector("#upcoming-movie");
-      API.getUpcoming()
-         .then(response => movieList.moviesData = response)
-         .catch(error => console.log('from error', error));
+      API.getUpcoming(response => {
+         movieList.moviesData = response;
+         return response;
+      }, error => {
+         console.log('from error', error);
+      });
    }
 
    loadPopular() {
       const slider = document.querySelector("slider-list");
-      API.getPopular()
-         .then(response => slider.movies = response)
-         .catch(error => console.log('from error', error));
+      API.getPopular(response => {
+         slider.movies = response;
+         return response;
+      }, error => {
+         console.log('from error', error)
+      });
    }
 }
 

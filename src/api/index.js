@@ -3,39 +3,56 @@ import "../components/MovieDetail.js";
 
 class MoviesAPI {
 
-   getNowPlaying() {
-      return fetch(`${apiURL}/movie/now_playing?api_key=${apiKEY}`)
+   getNowPlaying(onSuccess, onFailed) {
+      fetch(`${apiURL}/movie/now_playing?api_key=${apiKEY}`)
          .then(response => response.json())
-         .then(response => response.results)
-         .catch(error => console.log('this from error', error));
+         .then(response => { 
+            onSuccess(response.results);
+         })
+         .catch(error => {
+            if(onFailed) {
+               onFailed(error);
+            }
+         });
    }
    
-   getTopRated() {
-      return fetch(`${apiURL}/movie/top_rated?api_key=${apiKEY}`)
+   getTopRated(onSuccess, onFailed) {
+      fetch(`${apiURL}/movie/top_rated?api_key=${apiKEY}`)
          .then(res => res.json())
-         .then(res => res.results)
-         .catch(error => console.log('this from error', error));
+         .then(res => {
+            onSuccess(res.results);
+         })
+         .catch(error => {
+            if(onFailed) {
+               onFailed(error);
+            }
+         });
    }
 
-   getUpcoming() {
-      return fetch(`${apiURL}/movie/upcoming?api_key=${apiKEY}`)
+   getUpcoming(onSuccess, onFailed) {
+      fetch(`${apiURL}/movie/upcoming?api_key=${apiKEY}`)
          .then(res => res.json())
-         .then(res => res.results)
-         .catch(error => console.log('this from error', error));
-   }
-   
-   getGenres() {
-      return fetch(`${apiURL}/genre/movie/list?api_key=${apiKEY}`)
-         .then(res => res.json())
-         .then(res => res.genres)
-         .catch(error => console.log('this from error', error));
+         .then(res => {
+            onSuccess(res.results);
+         })
+         .catch(error => {
+            if(onFailed) {
+               onFailed(error);
+            }
+         });
    }
 
-   getPopular() {
-      return fetch(`${apiURL}/movie/popular?api_key=${apiKEY}`)
+   getPopular(onSuccess, onFailed) {
+      fetch(`${apiURL}/movie/popular?api_key=${apiKEY}`)
          .then(res => res.json())
-         .then(res => res.results)
-         .catch(error => console.log('this from error', error));
+         .then(res => {
+            onSuccess(res.results);
+         })
+         .catch(error => {
+            if(onFailed) {
+               onFailed(error);
+            }
+         });
    }
 
    getMovieDetail(id) {
