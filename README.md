@@ -9,3 +9,7 @@
 [![cinemovie](./screenshot.png)](https://ahmadertarizqi.github.io/cinemovie/)
 
 </div>
+
+<style>
+   img[alt=cinemovie] { width: 300px; }
+</style>
