@@ -6,6 +6,6 @@
 
 <h2>Preview Demo</h2>
 
-[![cinemovie](./screenshot.png | width=200)](https://ahmadertarizqi.github.io/cinemovie/)
+[![cinemovie](./screenshot.png)](https://ahmadertarizqi.github.io/cinemovie/)
 
 </div>
